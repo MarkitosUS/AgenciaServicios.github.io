@@ -1,0 +1,66 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="bg-dark">
+
+<div class=" container mt-4">
+    <a class="btn btn-primary" href="/inicio">Volver</a>
+    <a th:href="@{/new}" class="btn btn-primary">Agregar</a>
+    <br>
+    <br>
+  <table style="color:white;" class="table">
+
+      <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>NOMBRES</th>
+            <th>PRECIO</th>
+            <th>INVENTARIO</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr th:each="producto:${productos}">
+
+            <td th:text="${producto.id}"></td>
+            <td th:text="${producto.nombre}"></td>
+            <td th:text="${producto.precio}"></td>
+            <td th:text="${producto.inventario}"></td>
+            <td>
+
+                <a th:href="@{/editar/}+${producto.id}" class="btn btn-warning">Editar</a>
+                <a th:onclick="eliminar([[${producto.id}]])" class="btn btn-danger">Eliminar</a>
+
+            </td>
+
+        </tr>
+
+      </tbody>
+
+  </table>
+
+
+</div>
+
+
+</table>
+<script
+        src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
+</body>
+</html>
