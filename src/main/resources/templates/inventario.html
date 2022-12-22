@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,6 +13,7 @@
 <div class=" container mt-4">
     <a class="btn btn-primary" href="/inicio">Volver</a>
     <a th:href="@{/new}" class="btn btn-primary">Agregar</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/logout}" class="btn btn-primary">Cerrar Sesion</a>
     <br>
     <br>
   <table style="color:white;" class="table">
@@ -22,9 +23,10 @@
         <tr>
 
             <th>ID</th>
-            <th>NOMBRES</th>
-            <th>PRECIO</th>
-            <th>INVENTARIO</th>
+            <th>NOMBRES COMPLETOS</th>
+            <th>EMAIL CLIENTE</th>
+            <th>COSTE SERVICIO</th>
+            <th>SERVICIOS</th>
 
         </tr>
 
@@ -36,8 +38,9 @@
 
             <td th:text="${producto.id}"></td>
             <td th:text="${producto.nombre}"></td>
+            <td th:text="${producto.email}"></td>
             <td th:text="${producto.precio}"></td>
-            <td th:text="${producto.inventario}"></td>
+            <td th:text="${producto.servicio}"></td>
             <td>
 
                 <a th:href="@{/editar/}+${producto.id}" class="btn btn-warning">Editar</a>

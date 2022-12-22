@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
->
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 
 
 <head>
@@ -115,6 +115,7 @@
                         <a class="collapse-item" th:href="@{/login}">Login</a>
                         <a class="collapse-item" th:href="@{/registro}">Register</a>
                         <a class="collapse-item" th:href="@{/formi}">Formulario Inventario</a>
+                        <a sec:authorize="isAuthenticated()" th:href="@{/logout}" class="collapse-item">Cerrar Sesion</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>

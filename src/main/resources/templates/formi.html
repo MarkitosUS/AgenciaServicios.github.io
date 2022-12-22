@@ -18,7 +18,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>Modulo Producto</h3>
+                        <h3>Modulo Servicios</h3>
                     </div>
                     <div align="left" class="card-body">
                         <div class="form-group">
@@ -26,16 +26,20 @@
                             <input th:field="*{id}" type="text" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label>INVENTARIO</label>
-                            <input th:field="*{inventario}" type="text" class="form-control"/>
+                            <label>SERVICIO</label>
+                            <input th:field="*{servicio}" type="text" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label>NOMBRE</label>
+                            <label>NOMBRE COMPLETO CLIENTE</label>
                             <input th:field="*{nombre}" type="text" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label>PRECIO</label>
+                            <label>COBRO</label>
                             <input th:field="*{precio}" type="text" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>EMAIL</label>
+                            <input th:field="*{email}" type="text" class="form-control"/>
                         </div>
                     </div>
                     <div class="card-footer">

@@ -10,7 +10,9 @@ public class Producto {
     private int id;
     private String nombre;
     private double precio;
-    private int inventario;
+    private String servicio;
+
+    private String email;
 
 
     // constructor
@@ -19,11 +21,12 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int id, String nombre, double precio, int inventario) {
+    public Producto(int id, String nombre, double precio, String servicio, String email) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        this.inventario = inventario;
+        this.servicio = servicio;
+        this.email = email;
     }
 
     // GETTER & SETTER
@@ -53,12 +56,20 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getInventario() {
-        return inventario;
+    public String getServicio() {
+        return servicio;
     }
 
-    public void setInventario(int inventario) {
-        this.inventario = inventario;
+    public void setServicio(String servicio) {
+        this.servicio = servicio;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     // TOSTRING
@@ -69,8 +80,9 @@ public class Producto {
         return "Producto{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
+                ", email= "+ email +
                 ", precio=" + precio +
-                ", inventario=" + inventario +
+                ", inventario=" + servicio +
                 '}';
     }
 }
